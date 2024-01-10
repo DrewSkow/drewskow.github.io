@@ -1,0 +1,48 @@
+<iframe>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dynamic Block</title>
+<style>
+  #block_1 {
+    width: 1440px;
+    height: 810px;
+    background-color: #3B3831;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  #block_2 {
+    width: 1320px;
+    height: 690px;
+    background-color: #FFFFFF;
+    background-image: url('png.png');
+    background-size: 80%;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+
+</style>
+</head>
+<body>
+<div id="block_1">
+  <div id="block_2"></div>
+</div>
+
+<script>
+  const block2 = document.getElementById('block_2');
+  const colors = ['#FFFFFF', '#FFFFFF', '#A28C75', '#878175', '#000000'];
+  const images = ['https://i.imgur.com/inLUFby.png', 'https://i.imgur.com/mslzJ5o.png', 'https://i.imgur.com/bEPw4Nk.png', 'https://i.imgur.com/bEPw4Nk.png', 'https://i.imgur.com/bEPw4Nk.png'];
+  let index = 0;
+
+  setInterval(() => {
+    block2.style.backgroundColor = colors[index];
+    block2.style.backgroundImage = `url('${images[index]}')`;
+    index = (index + 1) % colors.length;
+  }, 600);
+</script>
+</body>
+</html></iframe>
